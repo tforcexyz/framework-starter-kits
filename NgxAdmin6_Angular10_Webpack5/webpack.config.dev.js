@@ -1,6 +1,5 @@
 const path = require('path');
-const webpack = require('webpack');
-const webpackMerge = require('webpack-merge');
+const { merge: webpackMerge } = require('webpack-merge');
 const baseConfig = require('./webpack.config.base');
 
 module.exports = webpackMerge(baseConfig, {
@@ -10,7 +9,9 @@ module.exports = webpackMerge(baseConfig, {
     publicPath: '/'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'build'),
+    static: {
+      directory: path.resolve(__dirname, 'build'),
+    },
     historyApiFallback: true
   }
 });

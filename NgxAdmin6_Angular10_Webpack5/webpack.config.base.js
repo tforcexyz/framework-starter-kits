@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const rootPath = path.resolve(__dirname);
@@ -24,11 +25,13 @@ module.exports = {
     ]
   },
   output: {
-    filename: 'index.js',
+    chunkFilename: '[id].js',
+    filename: '[name].js',
     publicPath: ''
   },
   optimization: {
     splitChunks: {
+      chunks: 'async',
       cacheGroups: {
         base: {
           chunks: 'initial',
@@ -51,12 +54,7 @@ module.exports = {
       {
         test: /\.ts$/,
         use: [
-          {
-            loader: 'awesome-typescript-loader',
-            options: {
-              configFileName: path.resolve(rootPath, 'tsconfig.json')
-            }
-          },
+          'ts-loader',
           'angular2-template-loader',
           'angular2-router-loader'
         ]
@@ -125,7 +123,11 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: [ '.js', '.ts' ]
+    extensions: [ '.js', '.ts' ],
+    fallback: {
+      'buffer': require.resolve('buffer/'),
+      'stream': require.resolve("stream-browserify/"),
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -143,6 +145,10 @@ module.exports = {
         minifyURLs: true,
       },
       inject: true,
+    }),
+    new webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer'],
+      process: 'process/browser'
     })
   ]
 }

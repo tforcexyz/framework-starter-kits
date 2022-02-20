@@ -15,17 +15,23 @@
  */
 
 /***************************************************************************************************
- * BROWSER POLYFILLS
- */
+* BROWSER POLYFILLS
+*/
+
 
 /** IE10 and IE11 requires the following for NgClass support on SVG elements */
-// import 'classlist.js';  // Run `npm install --save classlist.js`.
+import 'classlist.js';  // Run `npm install --save classlist.js`.
 
-/**
- * Web Animations `@angular/platform-browser/animations`
- * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
- * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
- */
+/** IE10 and IE11 requires the following to support `@angular/animation`. */
+import 'web-animations-js';  // Run `npm install --save web-animations-js`.
+
+
+/** Evergreen browsers require these. **/
+import 'core-js/es6/reflect';
+import 'core-js/es7/reflect';
+
+
+/** ALL Firefox browsers require the following to support `@angular/animation`. **/
 // import 'web-animations-js';  // Run `npm install --save web-animations-js`.
 
 /**

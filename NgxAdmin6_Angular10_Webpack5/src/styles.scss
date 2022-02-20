@@ -6,6 +6,16 @@
 @import './app/@ngx-admin/@theme/styles/styles';
 @import '~bootstrap/scss/_variables.scss';
 
+nb-card {
+
+  nb-card-body {
+
+    &.horizontal-form > * {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
 nb-card.dialog-card {
   min-width: $modal-md;
 
@@ -43,6 +53,10 @@ nb-radio-group[inline] {
   nb-radio {
     display: inline-block;
   }
+}
+
+textarea[noResize] {
+  resize: none;
 }
 
 .nb-theme-default [nbButton].size-medium {
