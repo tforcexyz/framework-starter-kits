@@ -1,5 +1,5 @@
 {
-  "name": "tfx-unifiler",
+  "name": "ngx-admin-tfxed",
   "version": "1.0.0",
   "scripts": {
     "start": "cross-env NODE_ENV=development npm run build:assets && npm run dev",
@@ -19,9 +19,10 @@
     "@angular/platform-browser": "^10.2.0",
     "@angular/platform-browser-dynamic": "^10.2.0",
     "@angular/router": "^10.2.0",
-    "@nebular/auth": "^6.2.1",
-    "@nebular/eva-icons": "^6.2.1",
-    "@nebular/security": "^6.2.1",
+    "@nebular/auth": "^6.2.2",
+    "@nebular/eva-icons": "^6.2.2",
+    "@nebular/security": "^6.2.2",
+    "@nebular/theme": "^6.2.2",
     "bootstrap": "^4.6.0",
     "buffer": "^6.0.3",
     "classlist.js": "^1.1.20150312",
