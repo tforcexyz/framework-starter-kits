@@ -11,7 +11,7 @@ export class AppComponent {
 
   title = 'Angular10 Webpack';
 
-  private menus: NbMenuItem[] = [
+  menus: NbMenuItem[] = [
     {
       title: 'Dashboard',
       link: 'dashboard',

@@ -54,9 +54,7 @@ module.exports = {
       {
         test: /\.ts$/,
         use: [
-          'ts-loader',
-          'angular2-template-loader',
-          'angular2-router-loader'
+          '@ngtools/webpack'
         ]
       },
       {
