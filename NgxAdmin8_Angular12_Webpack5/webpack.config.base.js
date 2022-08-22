@@ -63,7 +63,23 @@ module.exports = {
           {
             loader: 'html-loader',
             options: {
-              ignoreCustomFragments: [/\{\{.*?}}/]
+              sources: {
+                list: [
+                  "...",
+                  {
+                    tag: "link",
+                    attribute: "href",
+                    type: "src",
+                    filter: (tag, attribute, attributes, resourcePath) => false
+                  },
+                  {
+                    tag: "script",
+                    attribute: "src",
+                    type: "src",
+                    filter: (tag, attribute, attributes, resourcePath) => false
+                  }
+                ]
+              }
             }
           }
         ]

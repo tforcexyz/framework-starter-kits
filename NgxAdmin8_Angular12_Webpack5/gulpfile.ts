@@ -8,12 +8,13 @@ const minifyCss = require('gulp-clean-css');
 const less = require('gulp-less');
 const rename = require('gulp-rename');
 const replace = require('gulp-replace');
-const sass = require('gulp-sass');
+const gulpSass = require('gulp-sass');
+const sassCompiler = require('sass');
+const sass = gulpSass(sassCompiler);
 const sassTildeImporter = require('./sass-tilde-support');
 const sourcemaps = require('gulp-sourcemaps');
 const minifyJs = require('gulp-uglify');
 const minifyJsOptions = { output: { comments: function(node, comment) { return /v\d\.\d\.\d/g.test(comment.value); } } }
-sass.compiler = require('sass');
 
 const outputDir = process.env.NODE_ENV !== 'production' ? 'build' : 'dist';
 

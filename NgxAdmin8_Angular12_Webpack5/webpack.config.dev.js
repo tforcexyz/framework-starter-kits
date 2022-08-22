@@ -17,7 +17,8 @@ module.exports = webpackMerge(baseConfig, {
   },
   plugins: [
     new AngularWebpackPlugin({
-      jitMode: true
+      jitMode: true,
+      tsconfig: 'tsconfig.app.json'
     })
   ]
 });
