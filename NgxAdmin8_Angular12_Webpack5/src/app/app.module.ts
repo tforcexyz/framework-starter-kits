@@ -2,12 +2,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbDatepickerModule, NbDialogModule, NbIconModule, NbMenuModule, NbSidebarModule, NbToastrModule, NbWindowModule } from '@nebular/theme';
+import {
+  NbButtonModule,
+  NbDatepickerModule,
+  NbDialogModule,
+  NbIconModule,
+  NbMenuModule,
+  NbSidebarModule,
+  NbToastrModule,
+  NbWindowModule
+} from '@nebular/theme';
 import { CoreModule } from './@ngx-admin/@core/core.module';
 import { ThemeModule } from './@ngx-admin/@theme/theme.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelloWorldComponent } from './hello-world.component';
+import { IndexComponent } from './index.component';
+import { NotFoundComponent } from './not-found.component';
+import { SampleModule } from './sample/sample.module';
 
 @NgModule({
   bootstrap: [
@@ -15,7 +26,8 @@ import { HelloWorldComponent } from './hello-world.component';
   ],
   declarations: [
     AppComponent,
-    HelloWorldComponent,
+    IndexComponent,
+    NotFoundComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -23,6 +35,7 @@ import { HelloWorldComponent } from './hello-world.component';
     BrowserAnimationsModule,
     CoreModule.forRoot(),
     HttpClientModule,
+    NbButtonModule,
     NbDatepickerModule.forRoot(),
     NbDialogModule.forRoot(),
     NbIconModule,
@@ -31,6 +44,7 @@ import { HelloWorldComponent } from './hello-world.component';
     NbWindowModule.forRoot(),
     NbToastrModule.forRoot(),
     ThemeModule.forRoot(),
+    SampleModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

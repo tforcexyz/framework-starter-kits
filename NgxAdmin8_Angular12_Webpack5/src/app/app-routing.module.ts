@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { Routes } from '@angular/router';
-import { HelloWorldComponent } from './hello-world.component';
+import { RouterModule, Routes } from '@angular/router';
+import { IndexComponent } from './index.component';
+import { NotFoundComponent } from './not-found.component';
 
 const routes: Routes = [
-  { path: '', component: HelloWorldComponent },
-  { path: '**', redirectTo: '' },
+  {
+    path: 'sample',
+    loadChildren: () => import('./sample/sample.module')
+      .then(x => x.SampleModule),
+  },
+  { path: '', component: IndexComponent, pathMatch: 'full' },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
